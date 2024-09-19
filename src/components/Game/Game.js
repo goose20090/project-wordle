@@ -21,7 +21,7 @@ function Game() {
   const [guesses, setGuesses] = React.useState(startingGrid);
   const [guessNum, setGuessNum] = React.useState(0);
 
-  let correctGuess = guesses[guessNum] === answer;
+  let correctGuess = guesses[guessNum - 1] === answer;
   let gameOver = guessNum === NUM_OF_GUESSES_ALLOWED;
 
   const gameFinished = correctGuess || gameOver;
@@ -38,7 +38,7 @@ function Game() {
         ))}
       </GuessesGrid>
       {gameFinished ? (
-        <Banner />
+        <Banner happy={correctGuess} guessNum={guessNum} />
       ) : (
         <GuessInput
           guesses={guesses}
