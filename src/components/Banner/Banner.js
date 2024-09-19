@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Banner({ happy, guessNum }) {
+function Banner({ happy, guessCount }) {
   let bannerMood = happy ? 'happy' : 'sad';
   return (
     <div className={`${bannerMood} banner`}>
@@ -9,7 +9,7 @@ function Banner({ happy, guessNum }) {
           <>
             {' '}
             <strong>Congratulations!</strong> Got it in{' '}
-            <strong>{guessNum} guesses</strong>.
+            <strong>{guessCount} guesses</strong>.
           </>
         ) : (
           <>
