@@ -23,7 +23,12 @@ function Game() {
 
   return (
     <>
-      <GuessInput guesses={guesses} setGuesses={setGuesses} />
+      <GuessInput
+        guesses={guesses}
+        setGuesses={setGuesses}
+        guessNum={guessNum}
+        setGuessNum={setGuessNum}
+      />
       <GuessList guesses={guesses} />
     </>
   );
