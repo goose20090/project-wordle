@@ -3,7 +3,6 @@ import React from 'react';
 import { range, sample } from '../../utils';
 import { WORDS } from '../../data';
 import GuessInput from '../GuessInput/GuessInput';
-import GuessList from '../GuessList/GuessList';
 import GuessesGrid from '../GuessesGrid/GuessesGrid';
 import { EMPTY_GUESS, NUM_OF_GUESSES_ALLOWED } from '../../constants';
 import Guess from '../Guess/Guess';
@@ -34,7 +33,6 @@ function Game() {
         guessNum={guessNum}
         setGuessNum={setGuessNum}
       />
-      <GuessList guesses={guesses} />
     </>
   );
 }
