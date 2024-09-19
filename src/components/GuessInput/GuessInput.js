@@ -10,8 +10,8 @@ function GuessInput({ guesses, setGuesses }) {
     setGuess('');
   }
   return (
-    <form class="guess-input-wrapper" onSubmit={handleSubmit}>
-      <label for="guess-input">
+    <form className="guess-input-wrapper" onSubmit={handleSubmit}>
+      <label htmlFor="guess-input">
         Enter guess:
         <input
           id="guess-input"
