@@ -1,12 +1,11 @@
 import React from 'react';
+import Cell from '../Cell/Cell';
 
 function Guess({ guess }) {
   return (
     <p className="guess">
       {guess.split('').map(char => (
-        <span className="cell" key={crypto.randomUUID()}>
-          {char}
-        </span>
+        <Cell char={char} key={crypto.randomUUID()} />
       ))}
     </p>
   );
