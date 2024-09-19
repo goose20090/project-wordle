@@ -5,7 +5,10 @@ function GuessInput() {
     <form class="guess-input-wrapper">
       <label for="guess-input">
         Enter guess:
-        <input id="guess-input"></input>
+        <input
+          id="guess-input"
+          pattern={'[A-Z]{5}'}
+          title="Your guess must be 5 characters long. Only letters allowed!"
       </label>
     </form>
   );
