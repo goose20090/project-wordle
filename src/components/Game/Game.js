@@ -24,7 +24,11 @@ function Game() {
     <>
       <GuessesGrid>
         {guesses.map(guess => (
-          <Guess key={crypto.randomUUID()} guess={guess} />
+          <Guess
+            key={crypto.randomUUID()}
+            guess={guess}
+            answer={answer}
+          />
         ))}
       </GuessesGrid>
       <GuessInput
