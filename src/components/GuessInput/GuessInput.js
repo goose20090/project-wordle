@@ -6,6 +6,7 @@ function GuessInput() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(guess);
+    setGuess('');
   }
   return (
     <form class="guess-input-wrapper" onSubmit={handleSubmit}>
@@ -14,6 +15,7 @@ function GuessInput() {
         <input
           id="guess-input"
           pattern={'[A-Z]{5}'}
+          required
           title="Your guess must be 5 characters long. Only letters allowed!"
           value={guess}
           onChange={e => setGuess(e.target.value.toUpperCase())}
