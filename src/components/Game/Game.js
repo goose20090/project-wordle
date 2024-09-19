@@ -6,6 +6,7 @@ import GuessInput from '../GuessInput/GuessInput';
 import GuessesGrid from '../GuessesGrid/GuessesGrid';
 import { EMPTY_GUESS, NUM_OF_GUESSES_ALLOWED } from '../../constants';
 import Guess from '../Guess/Guess';
+import Banner from '../Banner/Banner';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -20,6 +21,11 @@ function Game() {
   const [guesses, setGuesses] = React.useState(startingGrid);
   const [guessNum, setGuessNum] = React.useState(0);
 
+  let correctGuess = guesses[guessNum] === answer;
+  let gameOver = guessNum === NUM_OF_GUESSES_ALLOWED;
+
+  const gameFinished = correctGuess || gameOver;
+
   return (
     <>
       <GuessesGrid>
@@ -31,12 +37,16 @@ function Game() {
           />
         ))}
       </GuessesGrid>
-      <GuessInput
-        guesses={guesses}
-        setGuesses={setGuesses}
-        guessNum={guessNum}
-        setGuessNum={setGuessNum}
-      />
+      {gameFinished ? (
+        <Banner />
+      ) : (
+        <GuessInput
+          guesses={guesses}
+          setGuesses={setGuesses}
+          guessNum={guessNum}
+          setGuessNum={setGuessNum}
+        />
+      )}
     </>
   );
 }
